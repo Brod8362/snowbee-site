@@ -1,0 +1,11 @@
+.footer {
+    margin-top: 10em;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    padding: 1.5em;
+    background-color: rgb(118, 219, 233);
+    color: #fff;
+  }
