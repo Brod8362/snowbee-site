@@ -32,7 +32,7 @@ function Apple(){
 
 function Cardfunc(prop) {
   return (
-    <Card style={{ width: '18rem', margin: '4em' }}>
+    <Card style={{ width: '18rem', margin: '4em'}}>
       <Card.Img variant="top" src={prop.img} />
       <Card.Body>
         <Card.Title>{prop.title}</Card.Title>
