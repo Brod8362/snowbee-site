@@ -6,14 +6,14 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
-import Search from './searchBar.js';
+import SearchBar from './searchBar.js';
 import Filter from './filter.js';
 import Apple from './card.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
  
   <React.StrictMode>
-    <Search />
+    <SearchBar />
     <Filter />
     <Apple />
   

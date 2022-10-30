@@ -1,10 +1,22 @@
-// import data to search from 
-
-function Search() {
+import React, {useState} from 'react'
+   
+  
+const SearchBar = ({keyword, setKeyword}) => {
+  const [searchInput, setSearchInput] = useState("");
+  // import data to search from api
+  const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
     return (
-         <div className="search">
-           <input type="text" placeholder="search"/>
-         </div>
+        <div className="search">
+        <input 
+        type="text" 
+        placeholder="search"
+        style={BarStyling}
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+   
+        />
+        </div>
+         
        );
 }
-export default Search;
+export default SearchBar;
