@@ -1,9 +1,10 @@
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 
+
 function Apple(){
     return(
-        <div className='boppers'>
+        <div className='boppers' style={{ display: "flex", flexWrap: "wrap", margin: 15}}>
             <Cardfunc img="https://i.kym-cdn.com/news_feeds/icons/mobile/000/030/251/576.jpg"
             title="result 1"
             color="color1"
@@ -23,13 +24,15 @@ function Apple(){
             color="color3"
             vendor="vendor3"
             shiptime="shiptime3"
-            rating="rating3"/>
+            rating="rating3"/>      
         </div>
     );
 }
+
+
 function Cardfunc(prop) {
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem', margin: '4em' }}>
       <Card.Img variant="top" src={prop.img} />
       <Card.Body>
         <Card.Title>{prop.title}</Card.Title>
