@@ -9,15 +9,17 @@ import 'bootstrap/dist/js/bootstrap.js';
 import SearchBar from './searchBar.js';
 import Filter from './filter.js';
 import Apple from './card.js';
-import Title from './Title.js'
+import Title from './Title.js';
+import Footer from './footer.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Title />
-    <Search />
+    <SearchBar />
     <Filter />
     <Apple />
+    <Footer />
   </React.StrictMode>
  
 );
