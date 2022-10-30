@@ -1,7 +1,6 @@
-import { ToastBody } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
-
+import axios from 'axios';
 
 const response = {
   "products": [
@@ -19,7 +18,7 @@ const response = {
       "price": 96.98999786376953,
       "product_page": "https://www.ebay.com/itm/314167370192?amdata=enc%3AAQAHAAAA4LcKeCekYezaIaqNW6NRL7F8GfYYgBDTZXn2oTMsUDQcv%2FFb1BZhgAdTJzTblNu2ORSHtM3OKll7PGMvCjQcfKipNC4MJl2tGsB%2BzUORu%2BdpIsxErxvGE96DDFFf%2FeRfcDuq0PidLw4s2n7hpVjEUsf6%2FuUnQ67mMNBj9Xv4vcZaLQ%2B4NRkTVqeKms93OZyOQCQeyaIRT7YSQXnhPFIdMp5Ly4lctR3Iptz0RpsRJb5h6X2sivKi6P519UuhET%2FgFI%2BzvR6W858gPYi8E3WqrZy%2FFEWS2hgkm0sHiKpA%2FCPR%7Ctkp%3ABFBMyKPC54Rh",
       "properties": {},
-      "preview_url": "https://i.ebayimg.com/images/g/rvIAAOSw6tdjWeb2/s-l1600.jpg"
+      "preview_url": "https://www.cyberpowersystems.com/wp-content/uploads/2017/04/CST135XLU_L.jpg"
     },
     {
       "name": "APC UPS 450VA Battery Backup Surge Protector BN450M",
@@ -32,8 +31,30 @@ const response = {
   ]
 }
 
+function query_api(search_term) {
+  const json = {
+    "query": search_term,
+  };
+  const options = {
+    withCredentials: false
+  };
+  return axios.post("http://api.snowbee.byakuren.pw/search", json, options);
+}
+
 function Apple() {
   const rows = [];
+
+  let search_bar = document.getElementById("search-bar");
+  if (search_bar != null) {
+    let query = "iphone";
+    query_api(query).then(
+      response => {
+        console.log(response);
+      }
+    ).catch(
+      err => alert("Failed to retrieve products.")
+    );
+  } 
 
   for (let product of response["products"]) {
     let name = product["name"];
@@ -44,7 +65,7 @@ function Apple() {
     const elem = (
       <Cardfunc img={image}
         title={name}
-        price={`${price}`}
+        price={`$${price.toFixed(2)}`}
         vendor={vendor}
         cardlink={page}/>
     );
