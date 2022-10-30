@@ -5,6 +5,7 @@ const SearchBar = ({keyword, setKeyword}) => {
   const [searchInput, setSearchInput] = useState("");
   // import data to search from api
   const BarStyling = {width:"20rem",background:"#F2F1F9", border:"none", padding:"0.5rem"};
+      return(
         <div className="search">
 
         <input 
@@ -17,7 +18,7 @@ const SearchBar = ({keyword, setKeyword}) => {
         />
         
         </div>     
-         
+      );   
         
 }
 
