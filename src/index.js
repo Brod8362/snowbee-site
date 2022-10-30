@@ -6,7 +6,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/js/bootstrap.js';
 
-import Search from './searchBar.js';
+import SearchBar from './searchBar.js';
 import Filter from './filter.js';
 import Apple from './card.js';
 import Title from './Title.js';
@@ -21,6 +21,7 @@ root.render(
     <Apple />
     <Footer />
   </React.StrictMode>
+ 
 );
 
 
