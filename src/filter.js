@@ -20,7 +20,7 @@ function Filter() {
         <Dropdown>
      
           <Dropdown.Toggle variant="secondary" id="dropdown-basic" >
-            Dropdown Button
+            Filters
           </Dropdown.Toggle>
     
           <Dropdown.Menu>
